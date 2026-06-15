@@ -4,6 +4,13 @@ OpenClaw can publish to dochost two ways. The **skill** path works everywhere an
 is the recommended default; the **MCP** path gives the agent native `publish` /
 `list_my_pages` tools if you prefer.
 
+> **Recommended auth for OpenClaw: API key.** OpenClaw is a headless agent, so a
+> static Bearer key is the simplest, most reliable path (the skill below uses it,
+> and it needs no per-session browser step). mcporter *can* do OAuth
+> (`--auth oauth`) if you'd rather not store a key, but for a headless/Telegram
+> agent the API key is what we recommend. (Interactive clients like Claude, Cursor
+> and ChatGPT should use OAuth instead — see the main README.)
+
 ## Prerequisite (both paths)
 
 Create a dochost API key: sign in at <https://dochost.io> → **Settings → API keys**.

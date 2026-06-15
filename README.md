@@ -43,11 +43,21 @@ to use it in every project.
 You authorize once via OAuth in the browser; the assistant then publishes **as
 you**, and output follows your dochost plan's entitlements.
 
-## Agents (OpenClaw, Hermes, headless)
+## Which auth method?
 
-Headless agents and orchestrators can't run an interactive OAuth browser flow, so
-they authenticate with an **API key** instead. Create one at
-[dochost.io](https://dochost.io) → **Settings → API keys**, export it as
+| Client | Recommended auth | Why |
+|---|---|---|
+| **OpenClaw**, **Hermes** | **API key** | Headless agents (e.g. a Telegram orchestrator). A static Bearer key works with the plain-HTTP skill and any MCP runner, with no browser step per session. |
+| Claude, Cursor, ChatGPT, VS Code, Windsurf, and all other MCP clients | **OAuth** | One browser approval, nothing long-lived stored in config; the assistant publishes **as you**. |
+
+Keep the API key like any secret: store it as an environment variable / host
+secret (never commit it), and revoke or rotate it from **Settings → API keys** if
+it leaks.
+
+## Agents (OpenClaw, Hermes) — API key
+
+OpenClaw and Hermes are headless, so they authenticate with an **API key**. Create
+one at [dochost.io](https://dochost.io) → **Settings → API keys**, export it as
 `DOCHOST_API_KEY`, and either:
 
 - **Install the skill** — a self-contained `publish` skill that works on any agent

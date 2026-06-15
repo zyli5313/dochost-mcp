@@ -3,6 +3,11 @@
 Hermes loads skills from its skills directory and can call any HTTP endpoint, so
 the self-contained `dochost-publish` skill works directly — no MCP wiring required.
 
+> **Recommended auth for Hermes: API key.** Hermes is a headless agent; a static
+> Bearer key is the simplest path and works with the plain-HTTP skill below.
+> (Interactive MCP clients like Claude, Cursor and ChatGPT should use OAuth instead
+> — see the main README.)
+
 ## Prerequisite
 
 Create a dochost API key at <https://dochost.io> → **Settings → API keys**, and
