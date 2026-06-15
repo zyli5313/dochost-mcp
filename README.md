@@ -43,6 +43,25 @@ to use it in every project.
 You authorize once via OAuth in the browser; the assistant then publishes **as
 you**, and output follows your dochost plan's entitlements.
 
+## Agents (OpenClaw, Hermes, headless)
+
+Headless agents and orchestrators can't run an interactive OAuth browser flow, so
+they authenticate with an **API key** instead. Create one at
+[dochost.io](https://dochost.io) → **Settings → API keys**, export it as
+`DOCHOST_API_KEY`, and either:
+
+- **Install the skill** — a self-contained `publish` skill that works on any agent
+  that can make an HTTP request: [`skills/dochost-publish/`](./skills/dochost-publish/SKILL.md).
+- **Wire the MCP** — point the agent at `https://dochost.io/api/mcp` with the key as
+  a Bearer header: [`examples/mcporter.config.json`](./examples/mcporter.config.json).
+
+Per-host install guides:
+
+- **OpenClaw** → [`clients/openclaw.md`](./clients/openclaw.md)
+- **Hermes** → [`clients/hermes.md`](./clients/hermes.md)
+
+One-shot from a shell: [`examples/publish.sh`](./examples/publish.sh).
+
 ## Tools
 
 ### `publish`

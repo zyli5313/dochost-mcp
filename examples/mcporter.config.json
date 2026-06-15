@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "dochost": {
+      "url": "https://dochost.io/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${DOCHOST_API_KEY}"
+      }
+    }
+  }
+}
