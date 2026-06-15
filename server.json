@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.zyli5313/dochost-mcp",
+  "description": "Publish Markdown or HTML to a clean, shareable link from your AI assistant. Hosted, OAuth, no API keys.",
+  "repository": {
+    "url": "https://github.com/zyli5313/dochost-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://dochost.io",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://dochost.io/api/mcp"
+    }
+  ]
+}
