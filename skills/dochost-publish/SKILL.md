@@ -7,7 +7,7 @@ description: |
   Chinese "发布", "分享成链接", "做个网页", "生成链接" — for any document, report,
   README, or HTML the assistant produced. Works on any agent that can make an HTTP
   request (OpenClaw, Hermes, Claude, Cursor, ChatGPT, or a plain shell). Returns a
-  public dochost.io/d/... URL.
+  public dochost.co/d/... URL.
 ---
 
 # Publish to dochost
@@ -64,7 +64,7 @@ The response is JSON-RPC. The tool payload is a JSON string inside
 A success payload looks like:
 
 ```json
-{ "ok": true, "slug": "q3-report", "url": "https://dochost.io/d/q3-report",
+{ "ok": true, "slug": "q3-report", "url": "https://dochost.co/d/q3-report",
   "editToken": "…", "expiresAt": "2026-06-22T12:00:00.000Z" }
 ```
 

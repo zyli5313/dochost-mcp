@@ -50,4 +50,4 @@ shape above is standard for remote streamable-HTTP MCP servers.)
 ## Verify
 
 Ask Hermes: *"Publish this note as a dochost page and send me the link."* You should
-get a `https://dochost.io/d/…` URL back.
+get a `https://dochost.co/d/…` URL back.
