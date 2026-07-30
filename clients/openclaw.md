@@ -67,4 +67,4 @@ authorize in the browser — but for a headless Telegram agent the API key is si
 ## Verify
 
 Ask your agent: *"Publish 'hello from openclaw' as a markdown page and give me the
-link."* You should get back a `https://dochost.io/d/…` URL.
+link."* You should get back a `https://dochost.co/d/…` URL.

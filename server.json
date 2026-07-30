@@ -1,13 +1,21 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.zyli5313/dochost-mcp",
-  "description": "Publish Markdown or HTML to a shareable link from your AI assistant. OAuth, no API keys.",
-  "version": "1.0.0",
+  "title": "dochost",
+  "description": "Publish, list, update and delete shareable Markdown/HTML pages from your AI assistant.",
+  "version": "1.1.0",
   "repository": {
     "url": "https://github.com/zyli5313/dochost-mcp",
     "source": "github"
   },
   "websiteUrl": "https://dochost.io",
+  "icons": [
+    {
+      "src": "https://dochost.io/android-chrome-512x512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
