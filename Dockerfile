@@ -10,4 +10,6 @@ RUN npm ci --omit=dev --ignore-scripts --no-audit --no-fund \
 COPY --chown=node:node server ./server
 USER node
 
+STOPSIGNAL SIGINT
+
 CMD ["node", "server/index.js"]

@@ -42,7 +42,7 @@ child.on('error', rejectPending);
 const exited = new Promise((resolve) => {
   child.on('exit', (code, signal) => {
     rejectPending(new Error(`Bridge exited: ${code ?? signal}`));
-    resolve();
+    resolve({ code, signal });
   });
 });
 
@@ -98,8 +98,13 @@ try {
   }
   console.log(`PASS: anonymous initialize, ${catalog.tools.length} unchanged live tools, ping and advertised resources.`);
 } finally {
-  child.kill('SIGTERM');
-  await exited;
+  // EOF is the stdio lifecycle signal; mcp-remote cleans up its HTTP connection.
+  // Sending SIGTERM to a Node process running as container PID 1 can be ignored.
+  child.stdin.end();
+  const stopTimeout = setTimeout(() => child.kill('SIGKILL'), 10_000);
+  const exit = await exited;
+  clearTimeout(stopTimeout);
   lines.close();
   await rm(authDirectory, { recursive: true, force: true });
+  assert.equal(exit.code, 0, `Bridge did not exit cleanly (${exit.signal})`);
 }
