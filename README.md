@@ -47,6 +47,31 @@ to use it in every project.
 You authorize once via OAuth in the browser; the assistant then publishes **as
 you**, and output follows your dochost plan's entitlements.
 
+## Stdio / Docker bridge
+
+For clients or directory evaluators that need a local stdio process, this
+repository includes a bridge to the same hosted MCP endpoint:
+
+```sh
+npm ci --ignore-scripts
+node server/index.js
+```
+
+Or run it in Docker:
+
+```sh
+docker build -t dochost-mcp .
+docker run --rm -i dochost-mcp
+```
+
+Node.js 22 or newer is required. The bridge forwards the live tools and schemas;
+it is not a self-hosted copy of the dochost application. Initialization and
+tool discovery are public. Interactive clients can use OAuth; headless tool
+execution needs an existing `DOCHOST_API_KEY` runtime secret (Docker:
+`docker run --rm -i -e DOCHOST_API_KEY dochost-mcp`).
+
+Maintainers: see [Glama claim, build and release instructions](docs/glama-release.md).
+
 ## Which auth method?
 
 | Client | Recommended auth | Why |

@@ -1,0 +1,21 @@
+{
+  "name": "dochost-mcp",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Stdio bridge to the official hosted dochost MCP server",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "test:smoke": "node scripts/smoke-test.js"
+  },
+  "dependencies": {
+    "mcp-remote": "0.8.3"
+  },
+  "overrides": {
+    "qs": "6.16.0"
+  },
+  "license": "MIT"
+}
