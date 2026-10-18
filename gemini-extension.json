@@ -1,0 +1,13 @@
+{
+  "name": "dochost",
+  "version": "1.2.0",
+  "description": "Publish Markdown or HTML to a shareable dochost link from Gemini CLI. Six MCP tools over OAuth at https://dochost.io/api/mcp — no API keys.",
+  "mcpServers": {
+    "dochost": {
+      "httpUrl": "https://dochost.io/api/mcp",
+      "oauth": {
+        "enabled": true
+      }
+    }
+  }
+}
