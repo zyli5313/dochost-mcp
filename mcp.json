@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "dochost": {
+      "url": "https://dochost.io/api/mcp"
+    }
+  }
+}
