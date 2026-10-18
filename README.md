@@ -31,6 +31,24 @@ claude mcp add --transport http dochost https://dochost.io/api/mcp
 Then run `/mcp` inside Claude Code and approve in the browser. Add `--scope user`
 to use it in every project.
 
+**Gemini CLI** (extension):
+
+```bash
+gemini extensions install https://github.com/zyli5313/dochost-mcp
+```
+
+Or add a remote HTTP server in `~/.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "dochost": {
+      "httpUrl": "https://dochost.io/api/mcp"
+    }
+  }
+}
+```
+
 **Claude Desktop / Cursor / VS Code / Windsurf** — add a remote HTTP server:
 
 ```json
