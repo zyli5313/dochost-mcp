@@ -1,0 +1,14 @@
+{
+  "name": "dochost",
+  "version": "1.1.0",
+  "description": "Publish Markdown or HTML to a shareable dochost link from your AI assistant. OAuth, no API keys.",
+  "author": {
+    "name": "X Horizon",
+    "email": "hello@dochost.io"
+  },
+  "homepage": "https://dochost.io",
+  "repository": "https://github.com/zyli5313/dochost-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "markdown", "html", "publish", "dochost", "share"],
+  "logo": "assets/logo.png"
+}
