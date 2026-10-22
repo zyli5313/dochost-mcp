@@ -2,6 +2,8 @@
 
 [![dochost-mcp MCP server](https://glama.ai/mcp/servers/zyli5313/dochost-mcp/badges/score.svg)](https://glama.ai/mcp/servers/zyli5313/dochost-mcp)
 
+English | [简体中文](./README.zh-CN.md)
+
 Publish **Markdown or HTML to a clean, shareable link** — straight from your AI
 assistant. The dochost MCP server gives Claude, ChatGPT, Cursor and any other MCP
 client six tools — `publish`, `update_page`, `list_my_pages`, `get_page`,
