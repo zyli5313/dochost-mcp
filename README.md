@@ -6,8 +6,8 @@ English | [简体中文](./README.zh-CN.md)
 
 Publish **Markdown or HTML to a clean, shareable link** — straight from your AI
 assistant. The dochost MCP server gives Claude, ChatGPT, Cursor and any other MCP
-client six tools — `publish`, `update_page`, `list_my_pages`, `get_page`,
-`get_account`, `delete_page` — so your assistant can hand back a public
+client eight tools — `publish`, `update_page`, `get_page_content`,
+`set_page_options`, `list_my_pages`, `get_page`, `get_account`, `delete_page` — so your assistant can hand back a public
 [dochost](https://dochost.io) link and then keep maintaining it. No copy-paste,
 no separate dashboard.
 
@@ -123,7 +123,7 @@ One-shot from a shell: [`examples/publish.sh`](./examples/publish.sh).
 
 ## Tools
 
-Six tools. `publish` creates; the rest let the assistant keep working with what it
+Eight tools. `publish` creates; the rest let the assistant keep working with what it
 already published, instead of stranding a link every time you revise something.
 
 ### `publish`
@@ -157,6 +157,24 @@ all survive — only `body`, `format` and `title` change.
 > Prefer this over publishing again whenever you are revising something already
 > published — a second `publish` mints a second link and strands the one the
 > reader already has. Resending identical content is a no-op.
+
+### `get_page_content`
+Read back the **current** Markdown or HTML of one of your pages by `slug`. Call it
+before `update_page` whenever the assistant did not write the live content itself
+in the same conversation — `update_page` replaces the body wholesale, so editing
+from memory silently discards edits made elsewhere, including in the browser.
+Returns `version` and `sha256`; pass them to `update_page` as `ifVersion` /
+`ifSha` so the write is refused instead of overwriting a change it did not read.
+Expired pages are readable, and updating one republishes it on the same URL.
+
+### `set_page_options`
+Change a published page's visibility, search-engine indexing or password
+**without republishing it** — the URL, view count and content stay the same.
+Parameters: `slug` (required), `public`, `searchable`, `password`,
+`removePassword`; send only the fields to change. Turning a paid capability off
+never needs an entitlement; turning one on is checked against the current plan.
+A password always forces the page private, so asking for both `public: true` and
+a password is refused. Branding is not settable here.
 
 ### `list_my_pages`
 List the pages you have published, newest first. Paginated (`limit`, `offset`);
